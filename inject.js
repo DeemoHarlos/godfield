@@ -43,7 +43,7 @@ const parse = (text) => {
     if (multi) sel = sel.slice(0, -1)
     const label = sel.split(/[\.#]/)[0] || 'div'
     const id = sel.split(/[\.#]/)[1] || ''
-    const classes = sel.split('.').slice(1, -1)
+    const classes = sel.split('.').slice(1)
     return { level, label, id, classes }
   })
 
