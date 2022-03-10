@@ -42,7 +42,7 @@ const parse = (text) => {
     const multi = sel.endsWith('*') && !sel.endsWith('>*') && !sel.endsWith(' *')
     if (multi) sel = sel.slice(0, -1)
     const label = sel.split(/[\.#]/)[0] || 'div'
-    const id = sel.split(/[\.#]/)[1] || ''
+    const id = sel.split('#')[1] ? sel.split('#')[1].split('.')[0] : ''
     const classes = sel.split('.').slice(1)
     return { level, label, id, classes }
   })
