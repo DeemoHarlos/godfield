@@ -29,7 +29,6 @@ const getFile = (url, cb) => {
   req.open('GET', url);
   req.send();
   req.addEventListener('load', e => {
-    console.log(e)
     cb(e.currentTarget.responseText)
   });
 }
