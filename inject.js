@@ -84,6 +84,7 @@ const listen = (cb) => {
 getFile('//harlos.me/godfield/styles.sass', text => {
   const main = one('#main')
   listen(() => {
+    if (all('#main>div:nth-child(1)>div:nth-child(3)>div').length !== 3) return
     const selectors = ['#main']
     const addIdClass = (struct, i) => {
       const newSel = `${struct.label}:nth-child(${struct.multi ? `n+${i + 2}` : i + 1})`
