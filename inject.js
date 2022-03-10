@@ -94,6 +94,7 @@ getFile('//harlos.me/godfield/styles.sass', text => {
         ele.setAttribute('class', struct.classes.join(' '))
       })
       if (struct.children) struct.children.forEach(addIdClass)
+      selectors.pop()
     }
     structures = parse(text)
     structures.forEach(addIdClass)
