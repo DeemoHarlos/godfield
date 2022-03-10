@@ -82,8 +82,9 @@ const listen = (cb) => {
 }
 
 getFile('//harlos.me/godfield/styles.sass', text => {
+  const main = one('#main')
   listen(() => {
-    const selectors = []
+    const selectors = ['#main']
     const addIdClass = (struct, i) => {
       const newSel = `${struct.label}:nth-child(${struct.multi ? `n+${i + 2}` : i + 1})`
       selectors.push(newSel)
@@ -96,6 +97,6 @@ getFile('//harlos.me/godfield/styles.sass', text => {
       selectors.pop()
     }
     structures = parse(text)
-    structures.forEach(addIdClass)
+    structures[0].children.forEach(addIdClass)
   })
 })
